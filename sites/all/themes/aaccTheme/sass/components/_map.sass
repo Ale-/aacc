@@ -1,0 +1,152 @@
+/**
+  MAPAS DE LOS GRUPOS DE TRABAJO
+
+.page-mapas
+  #block-system-user-menu
+    display: none
+  #section-header
+    display: none
+  .content > p
+    display: none
+
+//Categorias de la leyenda
+$leyenda: edif viv verd centr llave vehiculo material rayo social gente megafono juego cerveza comida musica camara malo bueno info star
+
+//.view-display-id-block_1
+  border: 2.5px solid rgba(black,.8)
+  padding: 3px
+
+.view-id-fake_mapas
+  .mapInterface
+    float: right
+    .minmax
+      font-size: .5em
+      color: white
+    li:first-child a
+      display: none
+  .item-list ul li
+    margin: 0
+  > .view-content
+    background: rgba(black, .8)
+    padding: 15px
+    width: 250px
+  color: white
+  margin-left: 50px
+  position: absolute
+  top: 10px
+  z-index: 200
+  margin-bottom: 40px
+  .views-field-field-mapa-titulo
+    line-height: 1
+    margin-bottom: 10px
+    h2
+      color: white !important
+  .views-field-field-mapa-descripcion
+    border: 1px dashed  white
+    border-width: 1px 0
+    padding-top: 10px
+  .view-header
+    font-size: 2em
+    ul
+      margin-bottom: 5px
+    li
+      font-family: $iconfont
+      list-style: none
+      +inline-block
+      margin: 0 5px
+      +transition(transform .5s ease)
+      &:hover
+        cursor: pointer
+      &.rotated
+        +rotate(45deg)
+  .views-field-field-mapa-descripcion
+    margin-bottom: 20px
+  @each $categoria in $leyenda
+    .views-field-field-leyenda-#{$categoria}
+      margin-bottom: 10px 
+      .views-label
+        font-family: $iconfont
+        font-size: 1.25em
+        margin-right: 10px
+        width: 20px
+        +inline-block
+      .field-content
+        width: 75%
+        +inline-block
+
+body.page-mapas
+  .grid-12
+    position: absolute
+    z-index: 10
+    left: -10px
+    top: 0
+    width: 100%
+    +box-shadow(0 0 10px rgba(black, .35))
+  #section-footer
+    display: none
+
+a.maximize
+  font-family: $iconfont
+  font-size: 2em
+  position: absolute
+  z-index: 500
+  left: 15px
+  top: 75px
+  +linkColors($green, white, .5s ease)
+
+.leaflet-popup-content-wrapper
+  +border-radius(0 !important)
+.leaflet-popup-content
+  width: 250px
+  margin: 20px 15px 30px 15px
+  ul, ul li
+    margin: 0 !important
+  h4
+    margin-top: 5px !important
+    margin-bottom: 0
+    + br
+      display: none
+  .popup-date
+    margin-bottom: 10px !important
+    + br
+      display: none   
+  li.first
+    +box-shadow(0 0 3px rgba(black,.75) inset)
+    margin-top: 5px
+  img
+    border: 3px solid #ddd
+    width: 100%
+    height: auto
+  p 
+    margin: 0 !important
+  br
+    display: none
+.leaflet-popup-close-button
+  font-size: .75em !important
+  right: 30px
+
+.filteredMap
+  .views-exposed-form
+    +inline-block
+    position: absolute
+    margin: 10px
+    z-index: 500
+    bottom: 0
+    label
+      color: $green
+      font-size: 2em
+      font-family: $headersfont
+    select
+      background: rgba(white,.75)
+    .form-submit
+      +border-radius(0)
+      border: 0
+      background: $green
+
+
+.page-node-add-contenido-general,
+.page-node-edit-contenido-general
+  #edit-field-icono-und
+    .form-item
+      font-family: $iconfont
+

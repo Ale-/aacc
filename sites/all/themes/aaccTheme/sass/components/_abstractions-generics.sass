@@ -1,0 +1,221 @@
+/**
+  COMPONENTES y ABSTRACCIONES GENERICAS DE LA WEB
+
+//Abstracciones genericas de ajuste
+.defaultSize
+  font-size: 1.2em
+
+.invisible
+  display: none
+
+.air
+  margin-bottom: 40px
+
+.innerAir
+  padding-bottom: 20px !important
+
+.innerAirAbove
+  padding-top: 20px
+
+.airAbove
+  margin-top: 40px
+
+//Titulos de caja molones para panels
+= fancyLabel ($fontSize, $leftOffset)
+  position: relative
+  $triangleSize: $leftOffset + 2px
+  .pane-title
+    padding: 3px 0 3px $leftOffset
+    font-size: $fontSize
+    position: relative
+    margin-bottom: -$triangleSize
+    text-transform: uppercase
+    left: -$leftOffset
+    width: 100%
+    background: $black
+    color: #0f0 !important
+    +linksColors($green, white, .5s ease)
+    &:before
+      content: "◥"
+      font-size: $triangleSize
+      color: #555
+      position: absolute
+      left: 0
+      bottom: -($fontSize)+.1em
+
+//Etiquetas para las cajas de contenido
+.fancyLabel
+  +fancyLabel (1.1em, 8px)
+  &.greenLabel
+    h2.pane-title
+      background: $green
+      color: $black !important
+
+//Etiquetas con color de fondo 
+= label ($labelColor)
+  .pane-title
+    background: $labelColor
+
+//Botones para formularios
+= greenSubmit
+  background: $green
+  border: 0
+  +border-radius(0)
+
+
+.fixMargin
+  .pane-title
+    margin-bottom: 0 !important
+
+.simpleTitle
+  .pane-title
+    font-size: 1.3em
+    margin-bottom: 0 !important
+    text-transform: uppercase
+
+.biggerTitle
+  font-weight: bold
+  font-size: 1.6em
+  margin-bottom: 20px
+  text-transform: uppercase
+  line-height: 1
+
+.imageSizeLimited
+  img
+    width: 100%
+    height: auto
+
+
+//Caja general para elementos
+.box
+  background: #fff
+  +box-shadow(0 0 10px rgba(black, .4))
+  .pane-content
+    padding: 2%
+  margin-bottom: 20px
+
+
+//Caja para banners, no tienen relleno
+.bannerBox
+  background: #fff
+  +box-shadow(0 0 10px rgba(black, .4))
+  margin-bottom: 20px
+  img
+    width: 100%
+    height: auto
+
+//Cajas que van agrupadas en una, pese a ser distintos panes en un panel
+.boxGroup
+  background: #fff
+  .pane-title
+    padding-left: 2%
+  .pane-content
+    padding: 0 2% 10px 2%
+    h3
+      text-transform: uppercase
+      color: lighten($black, .75)
+      letter-spacing: 1px
+  &.pane-node-title
+    text-transform: uppercase
+    padding-top: 1%
+
+//Vista en rejilla, configuración general
+.gridView
+  .views-row
+    +inline-block
+    float: left
+    position: relative
+
+
+//Disposición de las cajas para evitar márgenes en los lados
+=gridFixed ($colsNumber, $rowsNumber, $offset)
+  $colWidth: (100% - (($colsNumber - 1) * $offset)) / $colsNumber
+  .pane-title
+    width: 100%
+  .views-row
+    width: $colWidth
+    margin: 0 $offset $offset 0 !important
+  @for $i from 1 to ($rowsNumber + 1)
+    $n: $i * $colsNumber
+    .views-row-#{$n}
+      margin-right: 0 !important
+
+
+//Clases para especificar número de columnas en la rejilla
+.gv-1
+  .views-row
+    width: 100%
+    margin: 0 0 10px 0 !important
+    padding-bottom: 10px
+
+.gv-2
+  @media screen and (max-width:480px)
+    +gridFixed(1, 25, 2%)
+  @media screen and (min-width:481px) and (max-width:1179px)
+    +gridFixed(2, 25, 2%)
+  @media screen and (min-width:1180px) and (max-width:1600px) 
+    +gridFixed(2, 25, 2%)
+  @media screen and (min-width:1600px)
+    +gridFixed(2, 25, 2%)
+
+.gv-3
+  @media screen and (max-width:480px)
+    +gridFixed(1, 25, 2%)
+  @media screen and (min-width:481px) and (max-width:1179px)
+    +gridFixed(2, 25, 2%)
+  @media screen and (min-width:1180px) and (max-width:1600px) 
+    +gridFixed(3, 25, 2%)
+  @media screen and (min-width:1600px)
+    +gridFixed(3, 25, 2%)
+
+//Clases para especificar alturas de las cajas en la rejilla
+@for $i from 0 through 15
+  $j: ($i * 20) + 200
+  .h-#{$j}
+    @media screen and (min-width:480px)
+      .views-row
+        height: #{$j}px
+
+//Estilo general e interior para cajas de las vistas en rejilla
+.front .gridBox
+  img
+    max-height: 200px
+
+.gridBox
+  .views-row 
+    background: #fff
+    margin-bottom: 10px
+    overflow: hidden
+    +box-shadow(0 0 10px rgba(black, .4))
+  img
+    width: 100%
+    height: auto
+    border-bottom: 1px solid #ddd
+  .views-field-title, .title
+    font-family: $headersfont
+    font-size: 1.2em
+    margin-bottom: 0 !important
+    padding: 15px 10px 0 10px
+    color: lighten($black, .75)
+    text-transform: uppercase
+    font-weight: bold
+  .views-field-created, .views-field-field-event-date, .date, .url
+    font-size: .75em
+    padding: 0 10px
+    //color: $green 
+    display: inline
+  .views-field-body, .body
+    padding: 10px
+    img
+      display: none
+  .views-field-comment-count
+    display: inline
+    float: right
+  .commentCount
+    color: #aaa
+    margin-right: 5px
+    &:after
+      content: ""
+      font-family: $iconfont
+      float: right
+      margin-right: 10px

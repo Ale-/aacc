@@ -1,0 +1,16 @@
+diff --git a/lazyloader/lazyloader.admin.inc b/lazyloader/lazyloader.admin.inc
+--- lazyloader.admin.inc
++++ lazyloader.admin.inc
+@@ -94,10 +94,10 @@
+ 
+   $form_values = $form_state['values'];
+ 
+-  if ($form_values['op'] == 'Save') {
++  if ($form_values['op'] == t('Save')) {
+     $settings = $form_values['lazyloader']; // save user settings
+   }
+-  elseif ($form_values['op'] == 'Reset') {
++  elseif ($form_values['op'] == t('Reset')) {
+     $settings = $_lazyloader_defaults;      // save default settings
+   }
+ 

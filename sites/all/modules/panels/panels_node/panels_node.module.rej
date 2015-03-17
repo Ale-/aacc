@@ -1,0 +1,47 @@
+*************** function panels_node_panels_cache_get($nid) {
+*** 463,469 ****
+  }
+  
+  /**
+-  * Store a display edit in progress in the page cache.
+   */
+  function panels_node_panels_cache_set($nid, $cache) {
+    ctools_include('object-cache');
+--- 463,469 ----
+  }
+  
+  /**
++  * Store a display edit in progress in the panels cache.
+   */
+  function panels_node_panels_cache_set($nid, $cache) {
+    ctools_include('object-cache');
+*************** function panels_node_panels_cache_set($nid, $cache) {
+*** 471,479 ****
+  }
+  
+  /**
+-  * Save all changes made to a display using the Page Manager page cache.
+   */
+  function panels_node_panels_cache_clear($nid, $cache) {
+    ctools_include('object-cache');
+    ctools_object_cache_clear('panels_node_display_cache', $nid);
+  }
+--- 471,488 ----
+  }
+  
+  /**
++  * Clear all changes made to a display using the panels cache.
+   */
+  function panels_node_panels_cache_clear($nid, $cache) {
+    ctools_include('object-cache');
+    ctools_object_cache_clear('panels_node_display_cache', $nid);
+  }
++ 
++ /**
++  * React to a cache save and save the display and clear cache.
++  */
++ function panels_node_panels_cache_save($nid, $cache) {
++   panels_save_display($cache->display);
++   ctools_include('object-cache');
++   ctools_object_cache_clear('panels_node_display_cache', $nid);
++ }

@@ -1,0 +1,82 @@
+//Abstractions
+
+//Clearfix ala Nicole Sullivan
+//http://www.stubbornella.org/content/2010/12/09/the-hacktastic-zoom-fix/
+=clearfix
+  overflow: hidden
+  _overflow: visible
+  zoom: 1
+
+//Media object ala Nicole Sullivan
+//http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+$mediadefaultoffset: 20px
+=media($offset: $mediadefaultoffset)
+  +clearfix
+  .left
+    float: left
+    margin-right: $offset
+    +inline-block
+  .right
+    +inline-block
+  > figure
+    float: left
+    margin-right: $offset
+
+.media
+  +media()
+
+//Set link colors to arrays inside an element
+=linksColors($normal, $hover, $color-transitions: none)
+  a
+    @if $color-transitions != none
+      +transition(color #{$color-transitions}) 
+    &:link, &:visited
+      color: $normal !important  
+    &:hover
+      color: $hover !important
+    &:active
+      color: $normal !important  
+
+//Set link colors to arrays
+=linkColors($normal, $hover, $color-transitions: none)
+  @if $color-transitions != none
+    +transition(color #{$color-transitions}) 
+  &:link, &:visited
+    color: $normal !important  
+  &:hover
+    color: $hover !important
+  &:active
+    color: $normal !important  
+
+//Drupal view flow grids with fixed height
+=flowGrid($element, $cols_b1, $cols_b2, $cols_b3, $cols_b4, $height, $voffset, $hoffset)
+  $o: $hoffset/2
+  +clearfix
+  #{$element}
+    +inline-block
+    float: left
+    height: $height
+    margin: $voffset $o
+    @media screen and (min-width:1600px)
+      +flowWidth($cols_b4, $o)
+    @media screen and (max-width:1600px)
+      +flowWidth($cols_b3, $o)
+    @media screen and (max-width:1179px)
+      +flowWidth($cols_b2, $o)
+    @media screen and (max-width:480px)
+      +flowWidth($cols_b1, $o)
+
+=flowWidth($cols, $offset)
+  width: (100% - ($cols * $offset * 2)) / $cols
+
+=withicon($text, $emsize: $iconsize, $color: $textcolor, $position: before, $margin: 10px)
+  $mpos: 'right'
+  @if $position == 'after'
+    $mpos: 'left' 
+  &:#{$position}
+    +inline-block
+    font-family: $iconfont
+    color: $color
+    font-size: #{$emsize}em
+    content: "#{$text}"
+    margin-#{$mpos}: $margin

@@ -1,0 +1,125 @@
+/**
+  Drupal resets
+
+/**
+  Abstractions
+
+//Reset a single table
+=resetTable
+  border: none
+  thead
+    border-bottom: 1px dashed #999
+  td, tr
+    border: none
+  tr.odd, tr.even
+    background: none
+    & td
+      background: none
+  th, th.active
+    border: none
+    background: none
+  tr:hover td, tr.even:hover td.active, tr.odd:hover td.active
+    background: none
+
+//Reset tables inside an element
+=resetInnerTables
+  table
+    +resetTable
+
+/**
+  Components
+
+=messagesIcon($content, $color)
+  &:before
+    content: $content
+    font-family: arial
+    font-size: 2em
+    color: $color
+    margin-right: 10px
+
+//Mensajes y alertas sin background
+#messages
+  .status, .warning, .error
+    background: rgba(white, .75)
+    border: 1px dashed #555 !important
+    margin-bottom: 20px
+    font-size: .75em
+    color: #555
+  .status
+    +messagesIcon("✚", green)
+  .warning
+    +messagesIcon("❗", orange)
+  .error
+    +messagesIcon("❌", red)
+
+//Tabla de tipos de contenido
+.page-admin-structure-types
+  #block-system-main
+    .content
+      table
+        +resetTable
+
+//Tabla de usuarios
+.page-admin-people
+  +resetInnerTables
+
+//Lista de módulos
+
+
+.module-filter-tabs-processed
+  +resetTable
+  .description
+    font-size: 1em
+
+#module-filter-modules
+  border-color: white !important
+
+#module-filter-submit
+  border: none !important
+
+#user-admin-permissions
+  table
+    +resetTable
+
+//Estilo por defecto de botones
+.form-submit
+  border: none 
+  +text-shadow(none) 
+  +border-radius(none !important)
+
+//Realce de elementos interactivos
+$lucecillas: "button, input, select, textarea"
+@each $luz in $lucecillas
+  #{$luz}:focus, #{$luz}:active
+    +box-shadow(none !important)
+    +text-shadow(none) 
+
+//Ajustes a las tabs
+.primary
+  margin-bottom: 20px !important
+  border: 0 !important
+  li a 
+    background: none !important
+    font-weight: bold
+    border: 0 !important
+    text-transform: uppercase
+    font-size: .9em
+
+//Sombra del admin menu
+#admin-menu
+  +box-shadow(none)
+  .admin-menu-account a
+    background: none !important
+  .dropdown .admin-menu-toolbar-category > a.active-trail
+    background: none !important
+    +border-radius(0 !important)
+    color: #0af
+
+//Reset de los subidores de archivos
+input.form-file
+  margin-right: 20px !important
+
+//Cursor marca de la casa
+html
+  cursor: crosshair
+

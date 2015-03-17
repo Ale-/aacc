@@ -1,0 +1,42 @@
+/**
+  AJUSTES GENERALES DE LAYOUT
+
+$zones: "body.page-bcn2014", "body.page-bcn2014.logged-in", "body.aaccbcn", "body.page-node-2727"
+
+@each $zone in $zones
+  #{$zone}
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAD0lEQVQImWNgQAX/yeAAAIHCA/0RE2WAAAAAAElFTkSuQmCC) repeat
+    border-top: 10px solid white
+    //Hacemos desaparecer a las bravas elementos indeseados
+    //todo: hacerlo con el sistema de bloques y no css 
+    #region-user-first,
+    #region-user-second,
+    #zone-menu,
+    #zone-branding,
+    #zone-footer-wrapper
+      display: none
+    #region-user-second
+      float: right
+    //Ajustamos contenido a la izquierda
+    #zone-content
+      margin-left: 0px
+      background: white
+      padding: 40px 0 60px   
+      padding-right: 20px
+ 
+    .page
+      margin-bottom: 100px
+
+    //Pegamos sidebar a la izquierda y añadimos el margen que le quitamos al margen derecho
+    .sidebar
+      margin-left: 0 !important
+      margin-right: 20px !important
+
+    //Ajustamos márgenes por defecto para permitir nesting de regiones en contenido
+    .panel-panel.content
+      margin-left: 0 !important
+      margin-right: 0 !important
+      .left  
+        margin-left: 0 !important
+      .right 
+        margin-right: 0 !important

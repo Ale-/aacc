@@ -1,0 +1,61 @@
+
+//Formulario de login de usuario
+
+#block-user-login
+  +clearfix
+  .block-inner
+    width: 100%
+    @media screen and (min-width:481px)
+      position: absolute
+    float: right
+    right: 40px 
+  .block-title
+    font-size: 2em
+    text-align: right
+    &:hover
+      cursor: pointer
+    font-family: $iconfont !important
+  .block-content
+    background: #fff
+    padding: 2px
+  .form-item
+    @media screen and (max-width:480px)
+      display: block
+    @media screen and (min-width:481px)
+      +inline-block
+  .user-register
+    @media screen and (max-width:480px)
+      margin: 0 0 20px 20px
+  input
+    border: 0 !important
+    background: #eee
+    margin: 0 10px
+  .form-submit
+    +greenSubmit
+    @media screen and (max-width:480px)
+      margin-top: 20px
+
+.block-user-login
+  .form-actions
+    margin-top: 0
+
+//Formulario de contacto del sitio
+#contact-site-form
+  margin-top: 40px
+  input, .resizable
+    width: 100%
+  label
+    font-family: $headersfont
+    font-size: 1.25em
+    margin-top: 20px
+
+  #edit-submit
+    margin-top: 20px
+    position: relative
+    right: 0
+    width: 100px
+    border: none
+    background: $black
+    color: white
+    +text-shadow(none)
+    +border-radius(0)

@@ -1,0 +1,60 @@
+/**
+  Ajustes de plantillas globales.
+  Mobile-first!
+
+#page
+  min-height: 100%
+  position: relative
+
+#section-content
+  padding-bottom: 120px
+
+#section-footer
+  position: absolute
+  bottom: 0
+  width: 100%
+
+#zone-footer-wrapper
+  height: 80px
+
+//Arregla el z-index a la hora de usar Admin Menu con Leaflet
+#admin-menu, #admin-menu .dropdown
+  z-index: 1000
+
+#recent-box
+  .grid-9 .item-list ul li, .grid-5 .item-list ul li, .grid-4 .item-list ul li, .grid-9
+    margin-left: 0
+  .grid-5
+    margin-left: 0
+  .grid-4
+    margin-right: 0
+
+.aacc-profiles
+  .grid-3 
+    margin-left: 0 !important
+  .grid-5
+    margin-right: 0 !important
+
+.field-content > .item-list ul li
+  margin: 0 !important
+
+#zone-branding-wrapper
+  margin-top: 20px
+
+#zone-user-wrapper
+  padding-top: 25px
+
+
+
+#region-branding
+  .block
+    +inline-block
+
+
+#zone-content-wrapper
+  margin-bottom: 40px
+
+
+#region-footer-first
+  @media screen and (max-width:480px)
+    display: none

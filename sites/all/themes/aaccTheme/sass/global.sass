@@ -1,0 +1,555 @@
+//IMPORTS
+
+//Librería de mixins de compass para css3
+@import compass/css3
+
+@import 'base/*'
+@import 'components/*'
+
+
+//MIXINS
+.marginFix
+  .pane-title
+    margin-bottom: 0 !important
+
+//OOCSS
+
+//Iconos
+.iconic
+  font-family: $iconfont
+  font-size: 2em
+
+
+.greenTitle
+  .pane-title
+    background: #0f0
+    color: $black !important
+
+.connectedUser
+  +clearfix
+  +media
+  margin: 10px 0
+
+.groupMembers
+  .views-row
+    +clearfix
+    margin-bottom: 10px
+  img
+    float: left
+    width: 60px
+    margin-right: 20px
+
+.connectedUsers
+  background: #fff
+  padding: 10px
+  font-size: 1.2em
+  .pane-title
+    text-transform: uppercase
+    font-size: 1.3em
+
+html
+  height: 100%
+
+body
+  cursor: crosshair
+  height: 100%
+
+input:focus
+  +box-shadow(none)
+
+.connectedUser
+  img
+    width: 60px
+    height: auto
+
+// Cabecera
+
+.contactLink
+  float: right
+
+.meta
+  img
+    width: 60px !important
+    height: auto
+    float: left
+    margin-right: 10px
+    padding-bottom: 10px
+
+
+.actions
+  ul li.leaf
+    list-style: none
+
+/*BLOQUE BANNERS
+
+.collapsable .pane-title:hover
+  cursor: pointer
+
+/*MODULES
+
+.pane-node-title
+  font-family: $headersfont
+  font-size: 1.8em
+
+.pane-node-author
+  font-size: 1.4em
+  margin-bottom: 20px
+
+.calendarSidebar
+  ul.pager, li
+    border: none !important
+  .date-prev, .date-next
+    background: none !important
+
+
+
+.dashboardCentralContent
+  .pane-title
+    display: none
+  .views-row
+    margin-bottom: 40px
+    background: #fff
+    padding: 20px
+  .field
+    margin: 10px 0
+
+.groupDescription
+  font-style: italic
+  text-align: justify
+  margin: 10px 0
+
+.groupDetails
+  .pane-content
+    div
+      margin-bottom: 10px
+    h3
+      font-size: 1.2em
+      margin-bottom: 0
+    h3:after
+      content: ":" 
+
+
+.statuses-textarea-wrapper
+  +box-shadow(none)
+  background: white
+  border: none
+
+.statuses-text-main
+  background: none
+
+.statuses-update .button
+  background: $green
+  border: none
+  margin-bottom: 40px
+  margin-top: 5px
+  font-family: $headersfont
+  text-transform: uppercase
+  
+.statuses-refresh-link
+  background: white
+  display: inline
+  padding: 5px
+  font-family: $headersfont
+  text-transform: uppercase
+  margin-bottom: 10px 
+
+.bigTitle
+  font-size: 2em
+  font-weight: bold
+  margin: 10px 0
+
+.groupLogo
+  img
+    width: 96%
+    height: auto
+    padding: 2%
+    background: #fff
+    box-shadow: 0 0 10px rgba(black,.1)
+
+.url
+  margin: 10px 0
+
+
+
+.explanation
+  font-size: 1.3em
+  text-align: justify
+  p
+    display: inline
+    background: white
+
+
+.more-link
+  font-family: $iconfont
+  font-size: 2em
+  color: $black
+
+.statuses-sender-picture, .fbss-comments-picture
+  img
+    width: 30px
+    height: auto
+
+.view-statuses-stream
+  table, td, tr
+    border: 0
+
+
+#brandingBottom
+  text-align: right
+  p
+    color: #fff
+  a
+    color: #0f0 !important
+
+
+.noPadding
+  .pane-content
+    padding: 0 !important
+
+.users
+  ul li
+    margin: 10px 0
+  img
+    width: 15%
+    height: auto
+    float: left
+    margin-right: 10px
+  .views-field-title
+    font-family: $headersfont
+    font-size: 1.3em
+  .views-row
+    +clearfix
+    padding-bottom: 10px
+    margin-bottom: 10px
+    border-bottom: 1px solid #ddd
+  .views-row-last
+    border-bottom: none 
+  .pane-content
+    padding-top: 20px
+    
+
+.groups
+  .views-field-field-imagen-grupo, .views-field-field-nodo-logo
+    img
+      width: 33%
+      height: auto 
+      float: left
+      margin-right: 10px
+  .views-field-title
+    font-family: $headersfont
+    font-size: 1.4em
+    margin-top: 10px
+
+.views-field-edit-node
+  float: right
+  padding-right: 10px
+  font-size: 1.25em
+  font-family: $iconfont
+
+
+
+.noResults
+  background: #fff
+  padding: 20px
+
+
+input.fbsmp-plugin-icon-button
+  background: #fff
+
+#infoBox
+  text-align: right
+  width: 100%
+
+.view-statuses-all, .view-statuses-stream
+  margin-top: 10px
+  table, tr, td
+    border: 0
+  td
+    padding: 10px
+  tr.even td
+    background-color: #fff
+    border-top: 1px dotted $green
+    border-bottom: 1px dotted $green
+  tr.views-row-last td
+    border-bottom: 0 !important
+  .statuses-content
+    margin: 5px 0 !important
+
+.statuses-time
+  font-size: .9em
+
+
+.filter-help, .filter-guidelines
+  display: none
+
+
+
+//FORMUARIO PARA RECUPERAR CONTRASEÑA 
+#user-pass
+  +formsGeneral
+
+//FORMULARIO TWEETS&WALKS
+#items-bat-node-form
+  +formsGeneral
+
+  .form-item-title,
+  .form-item-body-und-0-value,
+  .form-item-field-url-und-0,
+  .form-item-field-etiqueta-tweets-walks-und,
+  #edit-field-video-und-0-title
+    margin: 20px 0 5px 0
+    >label
+      +formsLabels
+
+  .field-name-field-localizacion
+    margin: 20px 0 5px 0
+    .fieldset-legend
+      +formsLabels
+      font-weight: bold
+    div.description
+      display: none
+    .fieldset-description
+      margin: 10px 0 
+
+
+  
+.closed
+  display: none
+
+.contentClosed
+  .pane-content
+    display: none
+
+#userInfoButton
+  &.boxGroup
+    background: $black
+  text-align: center
+  h2
+    font-family: $iconfont
+    font-weight: normal
+    display: inline
+    margin-bottom: 0
+    font-size: 3em
+    text-transform: uppercase
+    border-bottom: 0
+
+#accountActions
+  &.boxGroup
+    background: $black
+  .buttonWrapper
+    position: relative
+    border-top: 1px solid #555
+  .button
+    color: white !important
+    font-family: $iconfont
+    font-size: 3em
+    margin: 0 10px -5px 10px
+    width: 50px
+    text-align: center
+    +inline-block
+    +transition(color .5s ease)
+    &:hover
+      color: $green !important
+  #infoButton:hover
+    cursor: pointer
+   
+#accountInfo
+  color: #999
+   
+
+.flex-direction-nav a
+  height: 60px
+
+.page-user-register
+  #page-title
+    font-family: icon
+
+#slidingInfo
+  color: #fff
+  background: #222
+  padding: 10px
+  h4
+    font-size: 1.4em
+    margin: 5px 0 0 0
+    text-transform: uppercase   
+  a
+    &:link, &:visited
+      color: $green
+
+.fullImage
+  img
+    width: 100%
+    height: auto
+
+
+
+
+.page-user-password
+  #page-title
+    font-family: $iconfont
+
+.service-links
+  padding-top: 10px
+  li
+    display: inline
+  img
+    margin-right: 10px
+
+
+.node-type-nodos, .node-type-og-group, .node-type-pad
+  ul.tabs.primary
+    display: none
+
+.pane-block-20
+  iframe
+    padding-top: 10px
+
+.posts
+  background: #fff
+  .pane-content
+    padding: 10px
+  .views-row
+    margin: 20px 0
+    padding-bottom: 20px
+    border-bottom: 1px solid #999
+  .views-field-title
+    font-family: $headersfont
+    font-size: 1.2em
+  .views-field-created
+    color: #555
+    float: left
+    display: inline
+  .views-field-edit-node
+    font-family: $iconfont 
+
+.view-empty
+  p
+    background: #fff
+    padding: 20px
+
+.statuses-chars
+  background: #ddd
+  width: 95%  
+  padding-left: 5%
+
+.pane-node-field-imagen-grupo
+  img
+    width: 100%
+    height: auto
+
+body.maintenance-page
+  background: url('../assets/mant-bg.jpg')
+  +background-size(cover)
+  padding: 50px
+  font-family: $headersfont
+  color: #fff !important
+  #page-title
+    display: none
+  h1, h2, h3, h4
+    +inline-block
+    margin-bottom: 0 
+
+.statuses-comments
+  border: none
+
+.block-26
+  margin-top: 10px
+  font-size: .85em
+
+.region-branding-inner
+  @media screen and (max-width:480px)
+    display: none
+
+#block-block-9
+  img
+    max-width: 100%
+
+.batLink
+  font-size: 1.2em !important
+
+.nodeInfo
+  padding-top: 15px
+  
+  h3
+    display: inline
+    + p
+      display: inline
+      margin-left: 20px
+  .editLink
+    font-family: $iconfont
+    font-size: 1.6em
+
+.pane-user-picture img
+  width: 100%
+  height: auto
+
+//Guia activacion espacio púbico
+.node-type-book
+  .field-name-body
+    h4, h5
+      margin: 10px 0
+  .book-navigation
+    .menu
+      padding-bottom: 10px
+
+
+.views-exposed-widgets
+  margin: 20px 0
+  #edit-field-espacios-tid-wrapper,
+  #edit-field-formatos-tid-wrapper,
+  #edit-field-oficios-tid-wrapper,
+  #edit-field-practicas-tid-wrapper,
+  #edit-field-ambito-tid-wrapper
+    label
+      font-family: $headersfont
+      text-transform: uppercase
+      background: $black
+      color: white
+      text-indent: 1em
+    select
+      border: none
+  #edit-submit-noticias-usuarios
+    background: $green
+    +border-radius(0)
+    border: none
+    font-family: $headersfont
+    text-transform: uppercase
+    +text-shadow(none)
+    &:hover
+      background: $black
+      color: white
+
+.node-type-pad
+  iframe
+    margin: 20px 0 0 40px
+
+
+
+
+.page-admin
+  #zone-content
+    background: rgba(white, .9)
+    font-size: 1.2em
+    padding: 20px
+
+.field-name-field-localizacion
+  legend
+    display: none !important
+  .fieldset-description
+    margin: 10px 0
+    font-size: 1.2em !important
+  .description
+    display: none
+   
+.node-type-og-group
+  .group-mapa
+    .group-leyenda label
+      font-weight: normal
+      font-family: awesome
+      font-size: 1.2em
+      display: inline !important
+    input
+      border-width: 0 0 1px 0
+
+@import 'aaccbcn/*'
+

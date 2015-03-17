@@ -1,0 +1,51 @@
+/******
+  BASE COLORES TEMA
+  *****/
+
+/**
+  VARIABLES
+  **/ 
+
+$black: #1a1a1a
+$green: #0f0
+$bgcolor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGBoYCAWYFcJACtEAQFXLRfDAAAAAElFTkSuQmCC) repeat
+$blockscolor: #0000ff
+$textcolor: #555
+$linkscolor: #333
+$hoveredcolor: $green
+$headerscolor: $textcolor
+
+//Regiones con esquema de colores por defecto
+$defaultColorElements: ".page"
+
+/**
+  ABSTRACCIONES
+  **/ 
+
+=defaultColorsElements($elements)
+  @each $element in $elements
+    #{$element}
+      color: $textcolor
+      h1, h2, h3, h4, h5, h6
+        color: $headerscolor
+      +linksColors($linkscolor, $hoveredcolor, .5s ease)
+
+/**
+  BASE
+  **/ 
+
+//Color profiles
+html * 
+  color-profile: sRGB
+  rendering-intent: auto
+
+//Background body
+body
+  @media all and (min-width:480px)
+    background: $bgcolor
+
+//Regiones por defecto
++defaultColorsElements($defaultColorElements)
+
+img
+  //background: url('/sites/all/themes/aaccTheme/assets/loading.gif') no-repeat center center

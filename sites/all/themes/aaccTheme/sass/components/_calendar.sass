@@ -1,0 +1,47 @@
+/**
+  VISTAS DE CALENDARIOS DENTRO DE LA WEB
+
+
+.calendar-calendar .month-view .full td.multi-day 
+  div.monthview,
+  .inner .monthview .cutoff, 
+  .inner .monthview .continues
+    background: $green
+ 
+.calendar-calendar .week-view .full td.multi-day 
+  div.weekview, 
+  .inner .weekview .continues, 
+  .inner .weekview .cutoff
+    background: $green
+
+.calendar-calendar .day-view .full td.multi-day div.dayview,
+  background: $green
+
+li.date-next, li.date-prev
+  background: #fff
+
+.view .date-nav-wrapper
+  h3
+    text-transform: uppercase
+    font-size: 1.4em !important
+    margin-bottom: 20px
+  .pager 
+    border: none  
+    li
+      border: 0 
+      a
+        background: none
+  .date-prev, .date-next
+    background: transparent
+ 
+.calendar-calendar td .inner div.day a
+  color: $textcolor 
+
+.calendar-calendar .month-view .full 
+  td.date-box.today, tr td.single-day.today
+    border-color: $green
+
+.view .date-nav-wrapper .date-prev
+  //position: relative
+  left: 0
+  text-align: left

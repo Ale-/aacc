@@ -1,0 +1,94 @@
+/**
+  LAYOUT Y COMPONENTES DEL HEADER
+
+
+// SLOGAN DE LA WEB
+
+#region-branding
+  background: $black
+  color: #0f0 !important
+  #block-block-22
+    text-transform: uppercase
+    font-family: $fancyfont
+    margin-left: 5px
+    padding-left: 10px
+    +linksColors(white, $green, .5s ease)
+
+   
+//MENU PRINCIPAL
+
+$num_elems: 5
+$fw: 5%
+
+#block-system-main-menu ul.menu
+  +clearfix
+  width: 100%
+  font-weight: bold
+  margin-bottom: 5px
+  text-transform: uppercase
+  margin: 2px 0 40px 0
+  +linksColors($green, white, .5s ease)
+  li
+    +inline-block
+    text-align: center
+    margin: 0
+    padding: 0
+    float: left
+    outline: .5px $bgcolor solid
+    background-color: $black
+    list-style: none
+    &.first
+      font-family: $iconfont
+      border-left: none
+    &.active-trail
+      background: #0f0
+      +linksColors($black, white, .5s ease)
+    @media screen and (max-width:480px)
+      width: 100%
+      padding: 6px 0
+    @media screen and (min-width:481px)
+      width: (100% - 2*$fw) / $num_elems
+      &.first, &.last
+        width: $fw
+ 
+//Bloque de búsqueda
+#block-search-form
+  float: right
+  background: #0f0
+  #edit-search-block-form--2
+    border: 0 !important
+    border-left: 2px solid white !important
+    font-family: $fancyfont
+    color: $black
+    text-align: right
+    background: transparent
+  .form-submit
+    margin-left: 10px
+
+#block-system-user-menu
+  font-size: 1.2em
+  z-index: 500
+  text-align: right
+  ul.menu
+    text-align: right
+    padding: 6px
+    +border-radius(3px)
+    li
+      display: inline
+      text-align: center
+      font-family: $iconfont
+    display: inline
+    background: white
+
+.pane-system-user-menu
+  font-size: 3em
+  font-family: icon
+  ul li 
+    list-style: none
+    display: block
+    text-align: center
+    color: white
+    border-top: 1px dotted $green
+
+#block-block-9 img
+  background: none 

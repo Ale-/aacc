@@ -1,0 +1,283 @@
+/**
+  CREACIÓN Y EDICIÓN DE CONTENIDOS
+
+// Abstracciones
+
+=formsLabels
+  font-family: $headersfont
+  font-size: 1.4em
+  text-transform: uppercase
+  color: $black
+
+=formsGeneral
+  padding: 20px
+  background: #fff
+  .form-item,  
+    .description
+      font-size: 1em !important 
+  .fieldset-description
+    font-size: 1em !important
+
+  .filter-wrapper
+    display: none
+
+  .text-format-wrapper .description 
+    display: none
+  
+  .form-submit
+    background: white
+    +border-radius(0)
+    border: none
+    display: block
+    margin: 10px 0
+
+  .form-actions
+    input
+      display: inline
+      text-transform: uppercase
+      background: $green
+      font-family: 1.4em
+      margin: 40px 20px 0 0
+  
+  .vertical-tabs 
+    fieldset.vertical-tabs-pane
+      background: white
+    label
+      display: none
+    label.option
+      display: inline
+  .field-group-tabs-wrapper
+    margin-top: 20px
+  .group-tags
+    +formsLabels
+    &:before
+      content: "Tags"
+      font-weight: bold
+  .group-mapa
+    +formsLabels
+    &:before
+      content: "Mapa de trabajo"
+      font-weight: bold
+
+//Títulos
+
+.page-node-add-noticia,
+.page-node-add-contenido-general,
+.page-node-add-pad,
+.page-node-add-nodos,
+.page-node-add-og-group,
+.page-node-add-items-bat,
+.page-node-edit,
+.og-context-node,
+.page-user-edit,
+.page-user-register,
+.page-user-password
+  #page-title
+    background: $green
+    color: white
+    text-align: right
+    padding-right: 40px
+
+//FORMULARIO PARA AÑADIR NOTICIAS
+
+#noticia-node-form
+  +formsGeneral
+  .form-item-title,
+  .form-item-field-noticia-foto-und-0,
+  .form-item-body-und-0-summary,
+  .form-item-body-und-0-value,
+  .form-item-field-intereses-und,
+  .form-item-field-ambito-und,
+  #edit-field-video-und-0-title,
+    margin: 20px 0 5px 0
+    >label
+      +formsLabels
+  .field-type-date
+    legend
+      +formsLabels
+      font-weight: bold
+  #edit-field-event-date
+    margin: 20px 0 5px 0
+
+
+//FORMULARIO PARA AÑADIR CONTENIDOS DE GRUPO  
+#contenido-general-node-form
+  +formsGeneral
+  .form-item-title,
+  .form-item-body-und-0-summary,
+  .form-item-body-und-0-value,
+  #edit-field-video-und-0-title,
+  .form-item-og-group-ref-und-0-default,
+  .form-item-group-content-access-und,
+  .form-item-field-imagen-principal-und-0,
+  .form-item-field-recurso-und,
+  .form-type-radios
+    margin: 20px 0 5px 0
+    >label
+      +formsLabels
+  
+  .field-name-field-imagen-principal,
+  .field-name-field-galeria,
+  .field-name-field-documentos
+    margin: 20px 0 5px 0
+    .fieldset-legend
+      +formsLabels
+      font-weight: bold
+
+  .group-extras
+    margin-top: 20px
+    &:before
+      content: "Contenidos adicionales"
+      font-weight: bold
+  .group-tags
+    +formsLabels
+    &:before
+      content: "Tags"
+      font-weight: bold
+
+
+//FORMULARIO PARA AÑADIR GRUPOS DE TRABAJO
+
+#og-group-node-form
+  +formsGeneral
+  .form-item-title,
+  .form-item-field-nodo-logo-und-0,
+  .form-item-field-nodo-direccion-und-0-value,
+  .form-item-field-fecha-inicio-und-0-value,
+  .form-item-field-fecha-final-und-0-value,
+  .form-item-body-und-0-summary,
+  .form-item-body-und-0-value,
+  .form-item-field-nodo-url-und-0,
+  .form-item-field-colectivos-compis-und,
+  .form-item-field-intereses-und,
+  .form-type-radios,
+  .form-item-field-nodo-correo-und-0-email,
+  .form-item-field-imagen-grupo-und-0,
+  .form-item-group-content-access-und
+    margin: 20px 0 5px 0
+    >label
+      +formsLabels
+  .group-mapa .vertical-tabs
+    label
+      display: block
+      font-family: $iconfont
+
+//FORMULARIO PARA AÑADIR COLECTIVOS
+
+.node-nodos-form    
+  +formsGeneral
+  
+  .form-item-title,
+  .form-item-field-nodo-logo-und-0,
+  .form-item-field-nodo-direccion-und-0-value,
+  .form-item-field-fecha-inicio-und-0-value,
+  .form-item-body-und-0-summary,
+  .form-item-body-und-0-value,
+  .form-item-field-nodo-url-und-0,
+  .form-item-field-colectivos-compis-und,
+  .form-item-field-intereses-und,
+  .form-type-radios,
+  .form-item-field-nodo-correo-und-0-email
+    margin: 20px 0 5px 0
+    >label
+      +formsLabels
+
+  .field-name-field-nodo-correo .field-label
+    margin: 20px 0 5px 0
+    background: none
+    border: none
+    >label
+      +formsLabels
+
+  .field-name-field-localizacion
+    margin: 20px 0 5px 0
+    .fieldset-legend
+      +formsLabels
+      font-weight: bold
+    div.description
+      display: none
+    .fieldset-description
+      margin: 10px 0 
+
+
+//FORMULARIO PARA AÑADIR Y EDITAR USUARI*S
+
+#edit-og-user, #user-register-form
+  +formsGeneral
+
+#user-register-form
+  .form-item-name,
+  .form-item-mail,
+  .form-item-pass-pass1,
+  .form-item-field-descripcion-und-0-value,
+  .form-item-field-nodo-direccion-und-0-value,
+  .form-item-field-url-und-0,
+  .field-name-field-url .field-label,
+  .form-item-mollom-captcha
+    margin: 20px 0 5px 0
+    >label
+      +formsLabels
+
+  .field-name-field-url 
+    .field-label
+      background: none
+  #edit-field-url-und-add-more
+    background: $black
+    color: white
+    +text-shadow(none)
+    float: right
+
+  #field-url-values
+    border: none
+
+  .field-group-tabs-wrapper
+    display: none
+
+
+//FORMULARIO PARA EDITAR USUARI*S DENTRO DE LOS GRUPOS
+
+.view-og-members-admin
+  +formsGeneral
+  .form-submit
+    background: $green
+    color: white
+    +text-shadow(none)
+
+
+//FORMULARIO PARA AÑADIR PADS
+
+#pad-node-form
+  +formsGeneral
+  .form-item-title,
+  .form-item-field-id-und-0-value,
+  .form-item-field-resumen-und-0-value,
+  .form-item-og-group-ref-und-0-default
+    margin: 20px 0 5px 0
+    >label
+      +formsLabels
+
+
+//FORMULARIO PARA EDITAR USUARIOS
+
+#user-profile-form
+  +formsGeneral
+  .form-item-current-pass,
+  .form-item-mail,
+  .form-item-pass-pass1,
+  .form-item-field-descripcion-und-0-value,
+  .form-item-field-intereses-und,
+  .form-item-field-nodo-direccion-und-0-value
+    margin: 20px 0 5px 0
+    >label
+      +formsLabels
+
+  #edit-picture  
+    margin: 20px 0 5px 0
+    legend
+      +formsLabels
+      font-weight: bold
+
+//ENLACE PARA EDITAR NODOS
+.not-logged-in .editLink
+  display: none
+

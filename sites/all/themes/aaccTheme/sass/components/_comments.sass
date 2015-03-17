@@ -1,0 +1,79 @@
+/**
+  COMPONENTES DE COMENTARIOS DE NODOS
+
+//Formulario de comentarios
+.pane-node-comment-form
+  //Botón que activa el desplegable
+  .pane-title
+    background: white
+    text-transform: uppercase
+    font-weight: normal
+    display: inline
+    font-size: 1.5em
+    padding: 3px 6px
+#comment-form
+  padding: 20px
+  background: #fff
+  text-align: left
+  input, textarea
+    width: 100%
+    border: 0
+    background: #eee
+  label
+    font-family: $fancyfont
+    font-weight: normal
+    text-transform: uppercase
+  #edit-actions
+    text-align: right
+  #edit-submit
+    background: $green
+    width: auto
+    +border-radius(0)
+    text-transform: uppercase
+    +text-shadow(none)
+    font-weight: normal
+
+//Comentarios en sí mismos
+.commentBox
+  figure
+    margin-top: 25px
+    img
+      width: 75px
+      height: auto
+  .info
+    +inline-block
+    width: 15%
+    float: left
+    text-align: center
+  .button
+    +inline-block
+    background: white
+    width: 25px
+    //text-transform: uppercase
+    font-size: 1.5em
+    font-family: $iconfont 
+    text-align: center
+  .date
+    float: left
+
+  .content
+    +inline-block
+    position: relative
+    vertical-align: top
+    width: 85%
+    .buttons
+      text-align: right
+    .contentBody
+      background: white
+      +box-shadow(0 0 10px rgba(black,.2))
+      width: 94%
+      padding: 2%
+      margin-left: 2%
+      &:before
+        position: absolute
+        left: -6px
+        z-index: -10
+        content: "◀"
+        font-size: 2em
+        color: #fff
+        +text-shadow(0 0 10px rgba(black,.2))

@@ -1,0 +1,24 @@
+diff --git a/menu_token.module b/menu_token.module
+index 9abf470..431b8e5 100644
+--- a/menu_token.module
++++ b/menu_token.module
+@@ -59,18 +59,7 @@ function menu_token_form_menu_edit_item_validate($form, &$form_state) {
+     $form_state['values']['menu']['options']['alter'] = TRUE;
+ 
+     $path = $form_state['values']['menu']['token']['link_path'];
+-    // Check whether path is external.
+-    $substituted_path = token_replace($path);
+-    if (menu_path_is_external($substituted_path)) {
+-      return;
+-    }
+-    // Check access rights for current author to create this menu item.
+-    if ($menu_item = menu_get_item($substituted_path)) {
+-      if ($menu_item['access']) {
+-        return;
+-      }
+-    }
+-    form_set_error('link_path', t("The path '@link_path' is either invalid or you do not have access to it.", array('@link_path' => $path)));
++    return;
+   }
+   else {
+     $form_state['values']['menu']['link_title'] = $form_state['values']['menu']['token']['link_title'];

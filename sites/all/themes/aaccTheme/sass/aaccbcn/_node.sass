@@ -1,0 +1,56 @@
+/**
+  NODES 
+
+body.aaccbcn
+  .pane-title
+    display: none
+  .pane-node-content
+    img
+      width: 100%
+      height: auto
+    .textured-image
+      position: relative
+    .texture
+      width: 100%
+      height: 100%
+      position: absolute
+      z-index: 10
+      +box-shadow(0 0 5px rgba(black, .25) inset)
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC')
+    .titlebox
+      padding: 10px
+      line-height: 1
+      position: absolute
+      font-family: $fancyfont
+      z-index: 20
+      bottom: 5px
+      left: 5px
+      padding-bottom: 15px
+      color: white
+      background: rgba(black, .8)
+      +linksColors($orangebcn, white, .5s ease)
+      h2
+        color: white
+        margin-bottom: 10px
+      .metainfo
+        text-align: right
+        font-size: 1.25em
+      .submitted
+        margin: 5px 0 
+      .social
+        font-family: $fancyfont
+        a
+          font-family: $iconfont
+          font-size: 1.5em
+          margin: 0 10px
+    .field-name-body
+      margin-top: 20px
+      font-size: 1.25em
+      font-family: $fancyfont
+    .field-name-field-event-date
+      background: $orangebcn
+      color: white
+      padding: 10px
+      font-size: 1.5em
+      float: right
+ 

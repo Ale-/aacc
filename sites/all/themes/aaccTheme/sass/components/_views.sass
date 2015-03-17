@@ -1,0 +1,49 @@
+/**
+  VISTAS DE LA WEB
+
+//Ajustes a la primera noticia de la home
+.gv-1
+  .view-display-id-block_8
+    .views-row
+      margin-bottom: 0 !important 
+
+//Paginadores de la vista de noticias y del panel statuses
+.view-noticias-usuarios, .view-noticias-grupos, .view-statuses-all
+  .pager
+    border: none
+    background: none
+  .pager li.pager-current
+    margin-left: 5px
+    background: white
+    color: $textcolor
+  .pager li a
+    background: $black
+    padding: 4px
+    +linkColors($green, white)
+    +border-radius(0)
+
+.view-statuses-all
+  .pager
+    margin-top: 20px
+
+//Botón de ver más contenidos
+.more-link a
+  padding: 2px
+  font-size: .75em
+  background: $black
+  +linkColors($green, white)
+
+//Vista de banners de goteo
+#bannersGoteo
+  +box-shadow(0 0 10px rgba(black, .4))
+  .pane-content
+    background: #EBEAEB
+    text-align: center
+
+//Vista de banners de los encuentros
+//.banners
+  .pane-title
+    text-align: left
+  //img
+    width: 100%
+    height: auto   

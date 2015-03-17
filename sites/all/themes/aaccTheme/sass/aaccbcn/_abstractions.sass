@@ -1,0 +1,62 @@
+/**
+  ABSTRACCIONES Y ELEMENTOS COMUNES
+
+$orangebcn: #fe4504
+
+//Estilo de bloques de la home
+.bcnblock
+  .views-row
+    margin-bottom: 20px
+    position: relative
+    .newsheader
+      position: relative
+    img
+      width: 100%
+      height: auto
+    .textured-foto
+      position: relative
+    .textura
+      width: 100%
+      height: 100%
+      position: absolute
+      z-index: 10
+      +box-shadow(0 0 5px rgba(black, .25) inset)
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWNgYGD4z0AswK4SAFXuAf8EPy+xAAAAAElFTkSuQmCC')
+    .views-field-edit-node
+      font-size: 1.5em
+      position: absolute
+      top: 0px
+      right: 0px
+      z-index: 30
+      +linksColors(white, $orangebcn, .5s ease)
+    .views-field-body
+      padding: 0 20px
+      margin: 15px 0 0 0
+      font-family: $fancyfont
+      font-size: 1.25em
+      line-height: 1.5
+      font-weight: normal
+      p:first-child
+        +withicon("")
+    .titlebox
+      padding: 10px
+      line-height: 1
+      position: absolute
+      font-family: $fancyfont
+      z-index: 20
+      bottom: 5px
+      left: 5px
+      padding-bottom: 15px
+      background: rgba(black, .8)
+      +linksColors(white, $orangebcn, .5s ease)
+      .title
+        font-size: 1.35em
+        text-transform: capitalize
+        font-weight: bold
+      .metainfo
+        color: white
+        text-align: right
+        font-size: 1.25em
+        margin-top: 5px
+      
+
